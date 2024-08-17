@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../sass/style.css" />
+    <!-- <link rel="stylesheet" href="./tailwind.css" /> -->
+    <link rel="shortcut icon" href="./assets" type="image/x-icon" />
+    <link rel="shortcut icon" href="../assets/icon.png" type="image/x-icon" />
+    <title>Bankist App 🏦</title>
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header login -->
+      <header>
+        <nav>
+          <ul>
+            <li class="left">
+              <span class="bank-app">Bankist App 🏦</span>
+              <span class="owner-bank">login to get started 🔑</span>
+              <span class="sign-up"
+                >Don't have an account?
+                <a href="#" class="sign-up-btn">Register</a>
+                ✏️
+              </span>
+              <button class="restore-account">Restore Account</button>
+            </li>
+            <li class="mid">
+              <div class="dynamic-island-container">
+                <span class="pills"></span>
+                <div class="container-img">
+                  <img loading="lazy" />
+                </div>
+              </div>
+            </li>
+            <li class="right">
+              <form>
+                <input
+                  type="text"
+                  class="userNameInput"
+                  placeholder="UserName"
+                  required
+                  name="Login-UserName"
+                  id="Login-UserName"
+                />
+                <input
+                  type="password"
+                  required
+                  placeholder="password"
+                  class="passwordInput"
+                  maxlength="4"
+                  name="Login-Password"
+                  id="Login-Password"
+                />
+                <button class="submit-account">&#8594;</button>
+              </form>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="application-container" style="opacity: 0">
+        <div class="Balance">
+          <div class="balance--label--date">
+            <p class="balance-label">Current Balance</p>
+            <p class="balance-date"></p>
+          </div>
+          <select class="exchangerate"></select>
+          <p class="balance-value"></p>
+        </div>
+
+        <div class="movements-container"></div>
+
+        <div class="operation operation-transfer-money">
+          <h2>Transfer Money</h2>
+          <form>
+            <input
+              type="text"
+              class="form-input-to"
+              name="Transfer-input-name"
+              id="Transfer-input-name"
+            />
+            <input
+              type="number"
+              min="0"
+              class="form-input-amount"
+              name="Transfer-amount"
+              id="Transfer-amount"
+            />
+            <button class="form-button">&#8594;</button>
+            <label for="Transfer-input-name">Transfer To</label>
+            <label for="Transfer-amount">Amount</label>
+          </form>
+        </div>
+        <div class="operation operation-request-loan">
+          <h2>Request Loan</h2>
+          <form>
+            <input
+              type="number"
+              min="0"
+              class="form-input-loan-amount"
+              name="Loan-Amount"
+              id="Loan-Amount"
+              required
+            />
+            <button class="form-request-button">&#8594;</button>
+            <label for="Loan-Amount">Loan Amount</label>
+          </form>
+        </div>
+        <div class="operation operation-close-account">
+          <h2>Close Account</h2>
+          <form>
+            <input
+              type="text"
+              class="form-input-close-label"
+              name="Close-account-input"
+              id="Close-account-input"
+            />
+            <input
+              type="password"
+              maxlength="4"
+              class="form-input-close-password"
+              name="Close-Account-Password"
+              id="Close-Account-Password"
+            />
+            <button class="form-close-button">&#8594;</button>
+            <label for="Close-account-input">Confirm User</label>
+            <label for="Close-Account-Password">Confirm Password</label>
+          </form>
+        </div>
+
+        <div class="summary">
+          <p class="summary__label">In</p>
+          <p class="summary__value summary__value--in"></p>
+          <p class="summary__label">Out</p>
+          <p class="summary__value summary__value--out"></p>
+          <p class="summary__label">Interest</p>
+          <p class="summary__value summary__value--interest"></p>
+          <button class="btn--sort">↓ SORT</button>
+          <button class="log-out--account">🔓 logout</button>
+        </div>
+      </div>
+
+      <div class="moral-window hidden">
+        <button class="close-modal">&#215;</button>
+        <h1 class="Heading-Account">Create an account</h1>
+        <div class="form-Sign-UP">
+          <div class="img-soon">
+            <img src="../assets/coming-soon.webp" loading="lazy" />
+          </div>
+          <form>
+            <label for="username_Account_Create">Username</label>
+            <input
+              type="text"
+              placeholder="Username"
+              name="username_Account_Create"
+              id="username_Account_Create"
+              required
+            />
+            <label for="password_Account_Create">password</label>
+            <input
+              type="password"
+              placeholder="Create password"
+              maxlength="4"
+              required
+              name="password_Account_Create"
+              id="password_Account_Create"
+            />
+            <label for="transactions_Create" class="Transaction-account"
+              >Transactions</label
+            >
+            <div class="transactions">
+              <input
+                type="number"
+                min="0"
+                placeholder="Start Amount with"
+                name="transactions_Create"
+                id="transactions_Create"
+                required
+              />
+              <select name="country-region" id="country-region"></select>
+              <select name="currency-account" id="currency-account"></select>
+            </div>
+            <button id="btn--sign-up--Account">Sign up</button>
+            <div class="successfully-Created" style="opacity: 0">
+              successfully!!
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="overlay-window hidden"></div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
